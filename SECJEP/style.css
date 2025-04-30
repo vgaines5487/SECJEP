@@ -1,0 +1,281 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #060CE9;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Setup Screen */
+#setup-screen {
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#player-inputs {
+    margin: 30px 0;
+}
+
+.player-input {
+    margin: 15px 0;
+}
+
+.player-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.player-input input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: #FFCC00;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFD700;
+}
+
+/* Game Screen */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #FFCC00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.timer-container {
+    background-color: #000;
+    color: red;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #FFCC00;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.player-score {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.player-name {
+    color: #FFCC00;
+}
+
+.points {
+    color: white;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.category {
+    background-color: #060CE9;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 10px;
+    border: 2px solid #FFCC00;
+    border-radius: 5px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.question-cell {
+    background-color: #060CE9;
+    color: #FFCC00;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 10px;
+    border: 2px solid #1a1a1a;
+    border-radius: 5px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.question-cell:hover {
+    background-color: #1a1a1a;
+    border-color: #FFCC00;
+}
+
+.question-cell.answered {
+    visibility: hidden;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #060CE9;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    border: 4px solid #FFCC00;
+    text-align: center;
+}
+
+#category-name {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#question-value {
+    color: #FFCC00;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#question-text {
+    font-size: 28px;
+    margin-bottom: 30px;
+    min-height: 100px;
+}
+
+#player-answer {
+    padding: 15px;
+    font-size: 20px;
+    width: 80%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+#submit-answer {
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 15px 30px;
+}
+
+#correct-answer {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.result-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.result-buttons button {
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.result-buttons button.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.result-buttons button.incorrect {
+    background-color: #f44336;
+    color: white;
+}
+
+/* End Screen */
+#end-screen {
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#final-scores {
+    margin: 30px 0;
+    font-size: 24px;
+}
+
+.final-score {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #060CE9;
+    border-radius: 5px;
+}
+
+.winner {
+    color: #FFCC00;
+    font-weight: bold;
+    font-size: 28px;
+}
